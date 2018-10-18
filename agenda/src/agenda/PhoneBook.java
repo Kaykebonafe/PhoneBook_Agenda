@@ -2,11 +2,9 @@ package agenda;
 
 public class PhoneBook {
 
-    public PhoneBook(String nome) {
+
+ public PhoneBook(String nome, int telefone) {
         this.nome = nome;
-    }
-    
-    public PhoneBook(int telefone){
         this.telefone = telefone;
     }
 
@@ -26,6 +24,7 @@ public class PhoneBook {
         this.telefone = telefone;
     }
 
+   
     protected String nome;
     private int telefone;
 

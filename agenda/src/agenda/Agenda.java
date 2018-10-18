@@ -6,12 +6,11 @@ import java.util.ArrayList;
 public class Agenda {
 
     public static void main(String[] args) {
-        
-        Scanner entrada = new Scanner(System.in);//Cria um Scanner
-        
-        ArrayList <PhoneBook> agendaVector = new ArrayList<>();//Cria um ArrayList
-        
+       
         while (true) {
+            Scanner entrada = new Scanner(System.in);//Cria um Scanner
+            ArrayList <PhoneBook> agendaVector = new ArrayList<>();//Cria um ArrayList
+        
             System.out.println("Entre com uma das seguintes opções:\n");//Menu de opções
             System.out.println("n [nova entrada]");
             System.out.println("d [apaga registro da agenda]");
@@ -21,16 +20,13 @@ public class Agenda {
             
             String in = entrada.next();//Scanner de entrada do índice do menu
             String nome = entrada.next();//Scanner de input do nome
-            int telefone = entrada.nextInt();//Scanner de input de telefone
-            PhoneBook n = new PhoneBook(nome);
-            PhoneBook t = new PhoneBook(telefone);
+            Integer telefone = entrada.nextInt();//Scanner de input de telefone
             
             switch (in){
                 
                 case ("n"):
-                    System.out.println("Entre com o nome: \n");
-                    agendaVector.add(n);
-                    agendaVector.add(t);
+                    System.out.println("Entre com o nome e o telefone: \n");
+                    agendaVector.add(new PhoneBook(nome, telefone));
                     break;
             
                 case ("d"):
@@ -48,7 +44,8 @@ public class Agenda {
                     break;
                 case ("p"): 
                         for(int i = 0; i < agendaVector.size(); i++){
-                        System.out.println(agendaVector.get(i).getNome());
+                            System.out.println(agendaVector.get(i).getNome());
+                            System.out.println(agendaVector.get(i).getTelefone());
                         }
                     break;
                 case ("q"):
